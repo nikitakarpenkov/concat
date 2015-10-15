@@ -14,7 +14,7 @@ String f1 = 'Vasya';
 String f2 = 'Petro';
 String f3 = null;
 String f4 = 'Andrew';
-// Hello my dear friends: Vasya, Petro, Andrew!
+// Hello Vasya, Petro, Andrew!
 String result = 'Hello ' + concat.strings(f1,f2,f3).add(f4).add(null).with(', ').end('!');
 ```
 
