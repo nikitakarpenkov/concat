@@ -1,0 +1,44 @@
+public class StringBuilder {
+    List<String> strings;
+    String terminator;
+    String separator = ' ';
+    
+    public StringBuilder(List<String> strings) {
+        this.strings = new List<String>();
+        for (String str : strings)
+            if (String.isNotBlank(str))
+        		this.strings.add(str);
+    }
+    
+    public StringBuilder add(String str) {
+        if (String.isNotBlank(str))
+        	strings.add(str);
+        return this;
+    }
+    
+    public StringBuilder with(String str) {
+        this.separator = str;
+        return this;
+    }
+    
+    public String end(String str) {
+        if (String.isNotBlank(str))
+        	this.terminator = str;
+        return this.build();
+    }
+    
+    public String end() {
+        return this.build();
+    }   
+    
+    private String build() {
+        String result = String.join(this.strings, this.separator);
+        if (String.isBlank(result))
+            return '';
+        if (this.terminator != null)
+            result += this.terminator;
+        return result;
+    }
+    
+    
+}

@@ -1,0 +1,29 @@
+@isTest
+public class ConcatTest {
+    static testmethod void  test1() {
+        String f1 = 'Vasya';
+        String f2 = 'Petro';
+        String f3 = null;
+        String f4 = 'Andrew';
+        String result = 'Hello my dear friends: ' + concat.strings(f1,f2,f3).add(f4).add(null).with(', ').end('!');
+        system.assertEquals(result, 'Hello my dear friends: Vasya, Petro, Andrew!');
+    }
+    
+    static testmethod void  test2() {
+        String result = concat.strings().add(null).with(', ').end();
+        system.assertEquals(result, '');
+    }
+    
+    static testmethod void  test3() {
+        concat.strings();
+        concat.strings('');
+        concat.strings('', '');
+        concat.strings('', '', '');
+        concat.strings('', '', '', '');
+        concat.strings('', '', '', '', '');
+        concat.strings('', '', '', '', '', '');
+        concat.strings('', '', '', '', '', '', '');
+        concat.strings('', '', '', '', '', '', '', '');
+        concat.strings(new List<String>());
+    }
+}
