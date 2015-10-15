@@ -35,23 +35,23 @@ StringBuilder sb = concat.strings('a','b','c','d','e','f','g','h');
 
 ### Add more strings
 ```java
-sb.add('one more');
+StringBuilder sb = concat.strings('thing').add('one more');
 sb.add('and one more');
 // or use chaining
-sb.add('one').add('two');
+StringBuilder sb = concat.strings().add('one').add('two');
 ```
 
 ### Set separator
 ```java
 sb.with(', ');
 // with chaining
-sb.add('one').add('two').with('; ');
+StringBuilder sb = concat.strings('zero').add('one').add('two').with('; ');
 ```
 
 ### Set ending and take your result string without removed nulls, empty strings with properly set separators and ending
 ```java
 // no ending
-String s = sb.add('one').add('two').with('; ').end();
+String s = concat.strings('zero').add('one').add('two').with('; ').end();
 // some ending
-String s = sb.add('one').add('two').with('; ').end('.'); 
+String s = concat.strings('zero').add('one').add('two').with('; ').end('.'); 
 ```
